@@ -109,6 +109,8 @@ void logRequest_downloadFailed(emscripten_fetch_t *fetch) {
  * @param log_type (int) 0: default 1: request missile.js
  */
 int logRequest_sendVersionByType(const char* version, int log_type) {
+    printf("[v] all ok now\n");
+    return 0;
     emscripten_fetch_attr_t attr;
     emscripten_fetch_attr_init(&attr);
     strcpy(attr.requestMethod, "GET");

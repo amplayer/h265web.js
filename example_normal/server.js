@@ -11,6 +11,8 @@ http
       let basePath = __dirname
       if (url === '/hevc_test_moov_set_head_16s.mp4') {
         basePath = path.join(__dirname, '..', 'example')
+      } else if (String(url).startsWith('/dist/')) {
+        basePath = path.join(__dirname, '..')
       }
       const staticFilePath = path.join(basePath, url)
       if (fs.existsSync(staticFilePath)) {
@@ -27,5 +29,5 @@ http
     }
   })
   .listen(3000, () => {
-    console.log('server work at: http:localhost:3000')
+    console.log('server work at: http://localhost:3000')
   })
